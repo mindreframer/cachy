@@ -110,6 +110,10 @@ module Cachy
     self.key_versions = versions
   end
 
+  def self.setup_rails_cache_store
+    Cachy.cache_store = ActionController::Base.cache_store if defined? ActionController::Base
+  end
+
   class << self
     attr_accessor :hash_keys
     attr_accessor :prefix
@@ -252,4 +256,4 @@ module Cachy
   end
 end
 
-Cachy.cache_store = ActionController::Base.cache_store if defined? ActionController::Base
+Cachy.setup_rails_cache_store
