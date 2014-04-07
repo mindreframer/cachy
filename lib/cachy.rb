@@ -255,5 +255,3 @@ module Cachy
     @memory_store ||= MiniMemoryStore.new(:expires_in => KEY_VERSION_TIMEOUT)
   end
 end
-
-Cachy.setup_rails_cache_store

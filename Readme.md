@@ -6,14 +6,16 @@ Caching library to simplify and organize caching.
  - Dependent caches (x caches result of cache z+y -> z changes -> x changes)
  - Hashed keys (optional -> short/unreadable)
  - Global cache_version (expire everything Cachy cached, but not e.g. sessions)
- - ...
- - works out of the box with Rails
  - works with pure Memcache, Redis and [Moneta](http://github.com/wycats/moneta/tree/master)(-> Tokyo Cabinet / CouchDB / S3 / Berkeley DB / DataMapper / Memory store)
 
 Install
 =======
 As Gem: ` sudo gem install cachy `
 Or as Rails plugin: ` script/plugins install git://github.com/grosser/cachy.git `
+
+    # in config/initializers/cachy.rb
+    Cachy.setup_rails_cache_store
+
 
 Usage
 =====
