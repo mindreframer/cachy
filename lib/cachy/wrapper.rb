@@ -7,7 +7,7 @@ class Cachy::Wrapper
     @wrapped[key]
   end
 
-  def method_missing(name, args)
+  def method_missing(name, args=nil)
     @wrapped.send(name, *args)
   end
 
