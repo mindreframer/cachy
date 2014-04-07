@@ -1,4 +1,5 @@
 class Cachy::Wrapper
+  attr_accessor :wrapped
   def initialize(wrapped)
     @wrapped = wrapped
   end
